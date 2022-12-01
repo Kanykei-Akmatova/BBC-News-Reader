@@ -1,1 +1,1 @@
-# BBC News reader a student project
+# Mobile app to read BBC News
