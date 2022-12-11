@@ -15,7 +15,7 @@ public class RssFeedProvider {
     static final String PUB_DATE = "pubDate";
     static final String DESCRIPTION = "description";
     static final String CHANNEL = "channel";
-    static final String LINK = "link";
+    static final String LINK = "guid";
     static final String TITLE = "title";
     static final String ITEM = "item";
 

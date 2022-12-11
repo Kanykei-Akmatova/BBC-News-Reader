@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
@@ -40,32 +44,37 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(List<RssItem> bbcNews) {
             super.onPostExecute(bbcNews);
             ItemListAdapter adapter = new ItemListAdapter(getApplicationContext(), bbcNews);
+
+            boolean isTablet = findViewById(R.id.frameLayout) != null;
+
             listView.setAdapter(adapter);
-            //boolean isTablet = findViewById(R.id.frameLayout) != null;
             listView.setOnItemClickListener((list, item, position, id) -> {
                 Bundle dataToPass = new Bundle();
                 dataToPass.putString(BBCNewsConstant.NEWS_TITLE, bbcNews.get(position).getTitle());
+                dataToPass.putString(BBCNewsConstant.NEWS_DESCRIPTION, bbcNews.get(position).getDescription());
+                dataToPass.putString(BBCNewsConstant.NEWS_DATE, bbcNews.get(position).getPubDate());
                 dataToPass.putString(BBCNewsConstant.NEWS_LINK, bbcNews.get(position).getLink());
 
                 Intent newsTextActivity = new Intent(MainActivity.this, NewsTextActivity.class);
                 newsTextActivity.putExtras(dataToPass);
+                newsTextActivity.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(newsTextActivity);
 
-//                if(isTablet)
-//                {
-//                    DetailsFragment dFragment = new DetailsFragment();
-//                    dFragment.setArguments(dataToPass);
-//                    getSupportFragmentManager()
-//                            .beginTransaction()
-//                            .replace(R.id.frameLayout, dFragment)
-//                            .commit();
-//                }
-//                else //isPhone
-//                {
-//                    Intent nextActivity = new Intent(MainActivity.this, EmptyActivity.class);
-//                    nextActivity.putExtras(dataToPass);
-//                    startActivity(nextActivity);
-//                }
+                if(isTablet)
+                {
+                    NewsArticleFragment dFragment = new NewsArticleFragment();
+                    dFragment.setArguments(dataToPass);
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.frameLayout, dFragment)
+                            .commit();
+                }
+                else //isPhone
+                {
+                    Intent nextActivity = new Intent(MainActivity.this, NewsTextActivity.class);
+                    nextActivity.putExtras(dataToPass);
+                    startActivity(nextActivity);
+                }
 
             });
         }

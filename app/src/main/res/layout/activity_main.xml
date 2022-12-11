@@ -12,12 +12,10 @@
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="288dp">
-
         <ListView
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
         </ListView>
     </LinearLayout>
 
