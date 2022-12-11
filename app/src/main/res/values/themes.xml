@@ -12,10 +12,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-    </style>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
 
-    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
-        <!-- active thumb & track color (30% transparency) -->
         <item name="colorControlActivated">@color/purple_500</item>
     </style>
 </resources>

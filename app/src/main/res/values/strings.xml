@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BBC News</string>
+    <string name="string_open">open</string>
+    <string name="string_close">close</string>
 </resources>

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class NewsTextActivity extends AppCompatActivity {
+public class NewsTextActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
