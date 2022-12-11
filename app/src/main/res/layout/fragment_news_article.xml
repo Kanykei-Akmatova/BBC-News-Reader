@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
-                android:text=""
+                android:text="Title"
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -39,7 +40,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:padding="3dp"
-                android:text=""
+                android:text="Date"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -55,7 +56,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:padding="3dp"
-                android:text=""
+                android:text="Description"
                 android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
@@ -69,12 +70,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
-                android:padding="3dp"
-                android:text=""
                 android:autoLink="web"
+                android:padding="3dp"
+                android:text="Link"
                 android:textColor="#0f7fb6"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Switch
+                android:id="@+id/switchFavorite"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:gravity="start"
+                android:minHeight="48dp"
+                android:text="Add to Favorite" />
         </LinearLayout>
     </LinearLayout>
 

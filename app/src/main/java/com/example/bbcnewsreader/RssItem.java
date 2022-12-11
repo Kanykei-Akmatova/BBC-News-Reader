@@ -6,6 +6,14 @@ public class RssItem {
     public String description;
     public String pubDate;
 
+    public RssItem(){
+
+    }
+
+    public RssItem(String title, String link, String description, String pubDate){
+
+    }
+
     public String getTitle() {
         return title;
     }
