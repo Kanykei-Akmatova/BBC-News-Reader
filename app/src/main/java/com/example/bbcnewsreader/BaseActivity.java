@@ -68,7 +68,7 @@ public class BaseActivity extends AppCompatActivity {
             case R.id.itemHelp:
                 AlertDialog.Builder alertDiBuilder = new AlertDialog.Builder(this);
                 alertDiBuilder.setTitle(R.string.application_help)
-                        .setMessage("getString(R.string.alert_message)")
+                        .setMessage(R.string.help_message)
                         .setPositiveButton(R.string.alert_yes, (dialog, arg) -> {
                             dialog.dismiss();
                         })

@@ -26,4 +26,5 @@
     <string name="favorite_news">Favorite News</string>
     <string name="help">help</string>
     <string name="favorite">favorite</string>
+    <string name="help_message">This is BBC reader. You can read news and add them into your favourite list.</string>
 </resources>
