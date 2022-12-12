@@ -13,7 +13,7 @@ public class NewsActivity extends BaseActivity {
 
     private static final String TAG = "NewsActivity";
     private static final String BASE_BBC_URL = "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml";
-    private SQLHelper sqlHelper;
+    private List<RssItem> bbcNews;
 
     class NewsLoader extends AsyncTask<String, String, List<RssItem>> {
 
@@ -38,7 +38,7 @@ public class NewsActivity extends BaseActivity {
         @Override
         protected void onPostExecute(List<RssItem> news) {
             super.onPostExecute(news);
-
+            bbcNews = news;
             Bundle dataToPass = new Bundle();
             dataToPass.putSerializable(NewsConstant.NEWS_LIST, (ArrayList<RssItem>) news);
 
@@ -55,13 +55,34 @@ public class NewsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //initializing the sql helper
-        sqlHelper = new SQLHelper(this);
-        sqlHelper.getWritableDatabase();
-
         // Loading news
         NewsLoader newsLoader = new NewsLoader();
         newsLoader.execute(BASE_BBC_URL);
+    }
+
+    public void filter(String filter) {
+        List<RssItem> filteredNews = new ArrayList<>();
+
+        if(filter.trim().length() > 0) {
+            for (RssItem rssItem : bbcNews) {
+                int index = rssItem.getTitle().toLowerCase().indexOf(filter);
+                if(index > 0) {
+                    filteredNews.add(rssItem);
+                }
+            }
+        } else {
+            filteredNews = bbcNews;
+        }
+
+        Bundle dataToPass = new Bundle();
+        dataToPass.putSerializable(NewsConstant.NEWS_LIST, (ArrayList<RssItem>) filteredNews);
+
+        NewsFragment fragment = new NewsFragment();
+        fragment.setArguments(dataToPass);
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frameLayout, fragment)
+                .commit();
     }
 }

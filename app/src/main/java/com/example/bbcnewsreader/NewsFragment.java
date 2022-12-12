@@ -8,12 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class NewsFragment extends Fragment {
     private List<RssItem> bbcNews;
@@ -53,11 +55,10 @@ public class NewsFragment extends Fragment {
         });
 
         ImageButton imageButtonSearch = view.findViewById(R.id.imageButtonSearch);
-        imageButtonSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();
-            }
+        imageButtonSearch.setOnClickListener(v -> {
+            Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();
+            EditText editText = view.findViewById(R.id.SearchText);
+            ((NewsActivity) getActivity()).filter(editText.getText().toString().toLowerCase(Locale.ROOT));
         });
     }
 }

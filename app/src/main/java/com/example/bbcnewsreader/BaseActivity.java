@@ -25,6 +25,10 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
+        //initializing the sql helper
+        SQLHelper sqlHelper = new SQLHelper(this);
+        sqlHelper.getWritableDatabase();
+
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView  = findViewById(R.id.navigationMenu);
         toolbar = findViewById(R.id.toolBar);
