@@ -43,9 +43,9 @@ public class MainActivity extends BaseActivity {
             bbcNews = news;
 
             Bundle dataToPass = new Bundle();
-            dataToPass.putSerializable(BBCNewsConstant.NEWS_LIST, (ArrayList<RssItem>) news);
+            dataToPass.putSerializable(NewsConstant.NEWS_LIST, (ArrayList<RssItem>) news);
 
-            BBCNewsFragment fragment = new BBCNewsFragment();
+            NewsFragment fragment = new NewsFragment();
             fragment.setArguments(dataToPass);
 
             getSupportFragmentManager()

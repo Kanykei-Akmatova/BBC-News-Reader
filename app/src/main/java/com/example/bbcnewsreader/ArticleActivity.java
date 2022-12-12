@@ -2,7 +2,7 @@ package com.example.bbcnewsreader;
 
 import android.os.Bundle;
 
-public class NewsTextActivity extends BaseActivity {
+public class ArticleActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

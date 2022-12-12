@@ -24,7 +24,7 @@ public class FavoriteNewsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bbcNews = (ArrayList<RssItem>) getArguments().getSerializable(BBCNewsConstant.NEWS_FAVORITE_LIST);
+        bbcNews = (ArrayList<RssItem>) getArguments().getSerializable(NewsConstant.NEWS_FAVORITE_LIST);
     }
 
     @Override
@@ -36,18 +36,18 @@ public class FavoriteNewsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ItemListAdapter adapter = new ItemListAdapter(getContext(), bbcNews);
+        NewsAdapter adapter = new NewsAdapter(getContext(), bbcNews);
 
         ListView listView = view.findViewById(R.id.favoriteNewsListView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener((list, item, position, id) -> {
             Bundle dataToPass = new Bundle();
-            dataToPass.putString(BBCNewsConstant.NEWS_TITLE, bbcNews.get(position).getTitle());
-            dataToPass.putString(BBCNewsConstant.NEWS_DESCRIPTION, bbcNews.get(position).getDescription());
-            dataToPass.putString(BBCNewsConstant.NEWS_DATE, bbcNews.get(position).getPubDate());
-            dataToPass.putString(BBCNewsConstant.NEWS_LINK, bbcNews.get(position).getLink());
+            dataToPass.putString(NewsConstant.NEWS_TITLE, bbcNews.get(position).getTitle());
+            dataToPass.putString(NewsConstant.NEWS_DESCRIPTION, bbcNews.get(position).getDescription());
+            dataToPass.putString(NewsConstant.NEWS_DATE, bbcNews.get(position).getPubDate());
+            dataToPass.putString(NewsConstant.NEWS_LINK, bbcNews.get(position).getLink());
 
-            Intent newsTextActivity = new Intent((BaseActivity) getActivity(), NewsTextActivity.class);
+            Intent newsTextActivity = new Intent((BaseActivity) getActivity(), ArticleActivity.class);
             newsTextActivity.putExtras(dataToPass);
             startActivity(newsTextActivity);
         });

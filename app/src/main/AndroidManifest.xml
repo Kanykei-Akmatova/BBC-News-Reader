@@ -32,7 +32,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".NewsTextActivity"
+            android:name=".ArticleActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

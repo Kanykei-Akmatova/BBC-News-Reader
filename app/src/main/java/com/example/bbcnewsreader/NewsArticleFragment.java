@@ -36,16 +36,16 @@ public class NewsArticleFragment extends Fragment {
             Bundle dataFromActivity = getArguments();
 
             TextView titleText = view.findViewById(R.id.textViewTitleValue);
-            titleText.setText(dataFromActivity.getString(BBCNewsConstant.NEWS_TITLE));
+            titleText.setText(dataFromActivity.getString(NewsConstant.NEWS_TITLE));
 
             TextView descriptionText = view.findViewById(R.id.textViewDescriptionValue);
-            descriptionText.setText(dataFromActivity.getString(BBCNewsConstant.NEWS_DESCRIPTION));
+            descriptionText.setText(dataFromActivity.getString(NewsConstant.NEWS_DESCRIPTION));
 
             TextView dateText = view.findViewById(R.id.textViewDateValue);
-            dateText.setText(dataFromActivity.getString(BBCNewsConstant.NEWS_DATE));
+            dateText.setText(dataFromActivity.getString(NewsConstant.NEWS_DATE));
 
             TextView linkText = view.findViewById(R.id.textViewLinkValue);
-            linkText.setText(dataFromActivity.getString(BBCNewsConstant.NEWS_LINK));
+            linkText.setText(dataFromActivity.getString(NewsConstant.NEWS_LINK));
         }
 
         return view;

@@ -10,16 +10,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class ItemListAdapter extends BaseAdapter {
+public class NewsAdapter extends BaseAdapter {
         private Context context;
         private List<RssItem> starWarItems;
 
-        public ItemListAdapter(Context context, List<RssItem> items) {
+        public NewsAdapter(Context context, List<RssItem> items) {
             this.context = context;
             this.starWarItems = items;
         }
 
-        public ItemListAdapter() {
+        public NewsAdapter() {
         }
 
         @Override

@@ -33,7 +33,7 @@ public class FavoriteNewsActivity extends BaseActivity {
             } while (cursor.moveToNext());
         }
         Bundle dataToPass = new Bundle();
-        dataToPass.putSerializable(BBCNewsConstant.NEWS_FAVORITE_LIST, (ArrayList<RssItem>) news);
+        dataToPass.putSerializable(NewsConstant.NEWS_FAVORITE_LIST, (ArrayList<RssItem>) news);
 
         FavoriteNewsFragment fragment = new FavoriteNewsFragment();
         fragment.setArguments(dataToPass);

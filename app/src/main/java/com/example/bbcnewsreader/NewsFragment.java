@@ -15,16 +15,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BBCNewsFragment extends Fragment {
+public class NewsFragment extends Fragment {
     private List<RssItem> bbcNews;
 
-    public BBCNewsFragment() {
+    public NewsFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bbcNews = (ArrayList<RssItem>) getArguments().getSerializable(BBCNewsConstant.NEWS_LIST);
+        bbcNews = (ArrayList<RssItem>) getArguments().getSerializable(NewsConstant.NEWS_LIST);
     }
 
     @Override
@@ -36,18 +36,18 @@ public class BBCNewsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        ItemListAdapter adapter = new ItemListAdapter(getContext(), bbcNews);
+        NewsAdapter adapter = new NewsAdapter(getContext(), bbcNews);
 
         ListView listView = view.findViewById(R.id.newsListView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener((list, item, position, id) -> {
             Bundle dataToPass = new Bundle();
-            dataToPass.putString(BBCNewsConstant.NEWS_TITLE, bbcNews.get(position).getTitle());
-            dataToPass.putString(BBCNewsConstant.NEWS_DESCRIPTION, bbcNews.get(position).getDescription());
-            dataToPass.putString(BBCNewsConstant.NEWS_DATE, bbcNews.get(position).getPubDate());
-            dataToPass.putString(BBCNewsConstant.NEWS_LINK, bbcNews.get(position).getLink());
+            dataToPass.putString(NewsConstant.NEWS_TITLE, bbcNews.get(position).getTitle());
+            dataToPass.putString(NewsConstant.NEWS_DESCRIPTION, bbcNews.get(position).getDescription());
+            dataToPass.putString(NewsConstant.NEWS_DATE, bbcNews.get(position).getPubDate());
+            dataToPass.putString(NewsConstant.NEWS_LINK, bbcNews.get(position).getLink());
 
-            Intent newsTextActivity = new Intent(getActivity(), NewsTextActivity.class);
+            Intent newsTextActivity = new Intent(getActivity(), ArticleActivity.class);
             newsTextActivity.putExtras(dataToPass);
             startActivity(newsTextActivity);
         });
