@@ -16,14 +16,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/Base.CardView" />
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.drawerlayout.widget.DrawerLayout
@@ -31,25 +29,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/appBarLayout"
-            tools:openDrawer="start">
+            android:contentDescription="@string/app_name"
+            android:foregroundGravity="top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></FrameLayout>
 
             <com.google.android.material.navigation.NavigationView
                 android:id="@+id/navigationMenu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="start"
-                app:menu="@menu/drawer_menu" />
+                android:layout_gravity="start|top"
+                app:menu="@menu/navigation_menu">
+
+            </com.google.android.material.navigation.NavigationView>
 
         </androidx.drawerlayout.widget.DrawerLayout>
-
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/appBarLayout"
-            android:foregroundGravity="center">
-
-        </FrameLayout>
 
     </RelativeLayout>
 

@@ -3,13 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item1"
+        android:id="@+id/itemHome"
+        android:icon="@mipmap/ic_home_bbc_1"
         android:title="Home"
         app:showAsAction="ifRoom"></item>
 
     <item
-        android:id="@+id/item2"
+        android:id="@+id/itemFavorite"
+        android:icon="@mipmap/ic_heart_bbc_1"
         android:title="favorite"
         app:showAsAction="ifRoom"></item>
 
+    <item
+        android:id="@+id/itemHelp"
+        android:icon="@mipmap/ic_question_bbc_1"
+        android:title="help"
+        app:showAsAction="ifRoom"></item>
 </menu>

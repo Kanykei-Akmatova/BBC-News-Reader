@@ -1,6 +1,8 @@
 package com.example.bbcnewsreader;
 
-public class RssItem {
+import java.io.Serializable;
+
+public class RssItem implements Serializable {
     public String title;
     public String link;
     public String description;
@@ -10,8 +12,11 @@ public class RssItem {
 
     }
 
-    public RssItem(String title, String link, String description, String pubDate){
-
+    public RssItem(String title, String link, String description, String pubDate) {
+        this.title = title;
+        this.link = link;
+        this.description = description;
+        this.pubDate = pubDate;
     }
 
     public String getTitle() {
