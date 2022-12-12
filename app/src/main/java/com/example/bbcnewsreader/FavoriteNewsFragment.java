@@ -46,8 +46,9 @@ public class FavoriteNewsFragment extends Fragment {
             dataToPass.putString(NewsConstant.NEWS_DESCRIPTION, bbcNews.get(position).getDescription());
             dataToPass.putString(NewsConstant.NEWS_DATE, bbcNews.get(position).getPubDate());
             dataToPass.putString(NewsConstant.NEWS_LINK, bbcNews.get(position).getLink());
+            dataToPass.putString(NewsConstant.NEWS_LINK_ID, bbcNews.get(position).getLinkId());
 
-            Intent newsTextActivity = new Intent((BaseActivity) getActivity(), ArticleActivity.class);
+            Intent newsTextActivity = new Intent(getActivity(), ArticleActivity.class);
             newsTextActivity.putExtras(dataToPass);
             startActivity(newsTextActivity);
         });

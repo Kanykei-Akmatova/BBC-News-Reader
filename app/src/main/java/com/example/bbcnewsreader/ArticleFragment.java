@@ -46,6 +46,14 @@ public class ArticleFragment extends Fragment {
 
             TextView linkText = view.findViewById(R.id.textViewLinkValue);
             linkText.setText(dataFromActivity.getString(NewsConstant.NEWS_LINK));
+
+            String linkId = dataFromActivity.getString(NewsConstant.NEWS_LINK_ID);
+            Switch sw = view.findViewById(R.id.switchFavorite);
+            if(linkId != null && linkId.length() > 0) {
+                sw.setChecked(true);
+            } else {
+                sw.setChecked(false);
+            }
         }
 
         return view;

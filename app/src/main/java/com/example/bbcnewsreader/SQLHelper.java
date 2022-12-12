@@ -67,7 +67,7 @@ public class SQLHelper extends SQLiteOpenHelper {
      * */
     public Cursor getAll() {
         SQLiteDatabase db = getReadableDatabase();
-        return db.rawQuery("SELECT id, title, link, description, date FROM " + TABLE_NAME, null);
+        return db.rawQuery("SELECT id, title, link, description, date, link_id FROM " + TABLE_NAME, null);
     }
 
     /*

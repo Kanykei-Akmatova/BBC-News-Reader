@@ -13,9 +13,7 @@ public class NewsActivity extends BaseActivity {
 
     private static final String TAG = "NewsActivity";
     private static final String BASE_BBC_URL = "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml";
-    private final ArrayList<RssItem> savedNewsList = new ArrayList<>();
     private SQLHelper sqlHelper;
-    private List<RssItem> bbcNews = new ArrayList<>();
 
     class NewsLoader extends AsyncTask<String, String, List<RssItem>> {
 
@@ -40,7 +38,6 @@ public class NewsActivity extends BaseActivity {
         @Override
         protected void onPostExecute(List<RssItem> news) {
             super.onPostExecute(news);
-            bbcNews = news;
 
             Bundle dataToPass = new Bundle();
             dataToPass.putSerializable(NewsConstant.NEWS_LIST, (ArrayList<RssItem>) news);
@@ -66,23 +63,5 @@ public class NewsActivity extends BaseActivity {
         // Loading news
         NewsLoader newsLoader = new NewsLoader();
         newsLoader.execute(BASE_BBC_URL);
-
-//
-//        Cursor cursor = sqlHelper.getAll();
-//        Log.d(TAG, "Loading saved news");
-//
-//        if (cursor.moveToFirst()) {
-//            do {
-//                savedNewsList.add(new RssItem(
-//                        cursor.getString(1),
-//                        cursor.getString(2),
-//                        cursor.getString(3),
-//                        cursor.getString(4))
-//                );
-//            } while (cursor.moveToNext());
-//
-//            //adapter.notifyDataSetChanged();
-//        }
-
     }
 }
