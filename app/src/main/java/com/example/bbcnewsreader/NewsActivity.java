@@ -9,9 +9,9 @@ import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
+public class NewsActivity extends BaseActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "NewsActivity";
     private static final String BASE_BBC_URL = "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml";
     private final ArrayList<RssItem> savedNewsList = new ArrayList<>();
     private SQLHelper sqlHelper;

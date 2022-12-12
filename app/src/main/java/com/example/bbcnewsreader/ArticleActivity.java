@@ -10,7 +10,7 @@ public class ArticleActivity extends BaseActivity {
 
         Bundle dataToPass = getIntent().getExtras();
 
-        NewsArticleFragment aFragment = new NewsArticleFragment();
+        ArticleFragment aFragment = new ArticleFragment();
         aFragment.setArguments(dataToPass);
         getSupportFragmentManager()
                 .beginTransaction()

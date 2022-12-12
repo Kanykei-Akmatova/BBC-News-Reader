@@ -39,7 +39,7 @@ public class BaseActivity extends AppCompatActivity {
             drawerLayout.closeDrawer(GravityCompat.START);
             switch (item.getItemId()){
                 case R.id.nav_first:
-                    startActivity(new Intent(BaseActivity.this, MainActivity.class));
+                    startActivity(new Intent(BaseActivity.this, NewsActivity.class));
                     break;
                 case R.id.nav_second:
                     startActivity(new Intent(BaseActivity.this, FavoriteNewsActivity.class));
@@ -81,7 +81,7 @@ public class BaseActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "My Favorite", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemHome:
-                startActivity(new Intent(BaseActivity.this, MainActivity.class));
+                startActivity(new Intent(BaseActivity.this, NewsActivity.class));
                 Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
                 break;
         }

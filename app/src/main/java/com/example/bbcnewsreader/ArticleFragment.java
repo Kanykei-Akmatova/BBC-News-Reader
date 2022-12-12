@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
-public class NewsArticleFragment extends Fragment {
-    public NewsArticleFragment() {
+public class ArticleFragment extends Fragment {
+    public ArticleFragment() {
         // Required empty public constructor
     }
 
