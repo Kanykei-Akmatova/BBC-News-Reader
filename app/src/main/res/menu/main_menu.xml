@@ -5,18 +5,18 @@
     <item
         android:id="@+id/itemHome"
         android:icon="@mipmap/ic_home_bbc_1"
-        android:title="Home"
+        android:title="@string/home"
         app:showAsAction="ifRoom"></item>
 
     <item
         android:id="@+id/itemFavorite"
         android:icon="@mipmap/ic_heart_bbc_1"
-        android:title="favorite"
+        android:title="@string/favorite"
         app:showAsAction="ifRoom"></item>
 
     <item
         android:id="@+id/itemHelp"
         android:icon="@mipmap/ic_question_bbc_1"
-        android:title="help"
+        android:title="@string/help"
         app:showAsAction="ifRoom"></item>
 </menu>

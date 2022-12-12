@@ -43,7 +43,7 @@ public class NewsAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
 
             if (newView == null) {
-                newView = inflater.inflate(R.layout.news_item_row, parent, false);
+                newView = inflater.inflate(R.layout.news_row, parent, false);
             }
 
             RssItem toDoItem = (RssItem) getItem(index);

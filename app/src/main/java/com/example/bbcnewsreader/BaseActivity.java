@@ -67,22 +67,22 @@ public class BaseActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.itemHelp:
                 AlertDialog.Builder alertDiBuilder = new AlertDialog.Builder(this);
-                alertDiBuilder.setTitle("Application Help")
+                alertDiBuilder.setTitle(R.string.application_help)
                         .setMessage("getString(R.string.alert_message)")
-                        .setPositiveButton("alert_yes", (dialog, arg) -> {
+                        .setPositiveButton(R.string.alert_yes, (dialog, arg) -> {
                             dialog.dismiss();
                         })
-                        .setNegativeButton("alert_no", (dialog, arg) -> {
+                        .setNegativeButton(R.string.alert_no, (dialog, arg) -> {
                         });
                 alertDiBuilder.create().show();
                 break;
             case R.id.itemFavorite:
                 startActivity(new Intent(BaseActivity.this, FavoriteNewsActivity.class));
-                Toast.makeText(getApplicationContext(), "My Favorite", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.my_favorite, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemHome:
                 startActivity(new Intent(BaseActivity.this, NewsActivity.class));
-                Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.home, Toast.LENGTH_SHORT).show();
                 break;
         }
 

@@ -67,7 +67,7 @@ public class ArticleFragment extends Fragment {
         TextView linkText = view.findViewById(R.id.textViewLinkValue);
 
         linkText.setOnClickListener(v -> {
-            Toast.makeText(getActivity(), "Open :" + linkText.getText(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), linkText.getText(), Toast.LENGTH_SHORT).show();
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkText.getText().toString()));
             startActivity(browserIntent);
         });
@@ -77,7 +77,7 @@ public class ArticleFragment extends Fragment {
             SQLHelper sqlHelper = new SQLHelper(getActivity());
             sqlHelper.getWritableDatabase();
 
-            Snackbar snackbar = Snackbar.make(view, "Message", Snackbar.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(view, R.string.messsage, Snackbar.LENGTH_SHORT);
             View snackBarView = snackbar.getView();
             snackBarView.setBackgroundColor(this.getResources().getColor(R.color.purple_500));
             TextView textView = snackBarView.findViewById(com.google.android.material.R.id.snackbar_text);
@@ -94,11 +94,11 @@ public class ArticleFragment extends Fragment {
                         descriptionText.getText().toString(),
                         dateText.getText().toString(),
                         linkId);
-                textView.setText("The article is saved");
+                textView.setText(R.string.the_article_saved);
             } else {
                 // The toggle is disabled
                 sqlHelper.deleteByLinkId(linkId);
-                textView.setText("The article is deleted");
+                textView.setText(R.string.the_article_deleted);
             }
 
             snackbar.show();
