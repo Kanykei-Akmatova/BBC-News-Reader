@@ -84,7 +84,7 @@ public class NewsFragment extends Fragment {
 
             // Save last search
             SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putString("filter", filter);
+            editor.putString("filter", editText.getText().toString());
             editor.commit();
 
             pb.setProgress(10);

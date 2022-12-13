@@ -71,8 +71,7 @@ public class NewsActivity extends BaseActivity {
 
         if(filter.trim().length() > 0) {
             for (RssItem rssItem : bbcNews) {
-                int index = rssItem.getTitle().toLowerCase().indexOf(filter);
-                if(index > 0) {
+                if(rssItem.getTitle().toLowerCase().contains(filter)) {
                     filteredNews.add(rssItem);
                 }
             }
