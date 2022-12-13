@@ -10,6 +10,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * News Adapter to bind news data to a view.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class NewsAdapter extends BaseAdapter {
         private Context context;
         private List<RssItem> starWarItems;

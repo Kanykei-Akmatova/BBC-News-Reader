@@ -9,6 +9,12 @@ import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * NewsActivity process news list.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class NewsActivity extends BaseActivity {
 
     private static final String TAG = "NewsActivity";
@@ -84,5 +90,13 @@ public class NewsActivity extends BaseActivity {
                 .beginTransaction()
                 .replace(R.id.frameLayout, fragment)
                 .commit();
+    }
+
+    /**
+     * Return the help message
+     */
+    @Override
+    public String getHelpMessage(){
+        return getString(R.string.news_help_message);
     }
 }

@@ -7,6 +7,12 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * FavoriteNewsActivity provide the list of favorite news.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class FavoriteNewsActivity extends BaseActivity {
     private static final String TAG = "FavoriteNewsActivity";
 
@@ -43,5 +49,13 @@ public class FavoriteNewsActivity extends BaseActivity {
                 .beginTransaction()
                 .replace(R.id.frameLayout, fragment)
                 .commit();
+    }
+
+    /**
+     * Return the help message
+     */
+    @Override
+    public String getHelpMessage(){
+        return getString(R.string.favourite_list_help_message);
     }
 }

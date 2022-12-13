@@ -10,6 +10,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Rss Feed Provider.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class RssFeedProvider {
     static final String PUB_DATE = "pubDate";
     static final String DESCRIPTION = "description";
@@ -18,6 +24,9 @@ public class RssFeedProvider {
     static final String TITLE = "title";
     static final String ITEM = "item";
 
+    /**
+     * Return all parses rss items
+     */
     public static List<RssItem> get(String rssFeedURL) {
         List<RssItem> list = new ArrayList<>();
         XmlPullParser parser = Xml.newPullParser();

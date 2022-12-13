@@ -16,6 +16,12 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+/**
+ * ArticleFragment provides presentation for a news article.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class ArticleFragment extends Fragment {
     public ArticleFragment() {
         // Required empty public constructor
@@ -77,7 +83,7 @@ public class ArticleFragment extends Fragment {
             SQLHelper sqlHelper = new SQLHelper(getActivity());
             sqlHelper.getWritableDatabase();
 
-            Snackbar snackbar = Snackbar.make(view, R.string.messsage, Snackbar.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(view, R.string.message, Snackbar.LENGTH_SHORT);
             View snackBarView = snackbar.getView();
             snackBarView.setBackgroundColor(this.getResources().getColor(R.color.purple_500));
             TextView textView = snackBarView.findViewById(com.google.android.material.R.id.snackbar_text);

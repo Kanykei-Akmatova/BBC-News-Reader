@@ -16,7 +16,7 @@
 
     <item
         android:id="@+id/itemHelp"
-        android:icon="@mipmap/ic_question_bbc_1"
+        android:icon="@mipmap/ic_question_mark_1"
         android:title="@string/help"
         app:showAsAction="ifRoom"></item>
 </menu>

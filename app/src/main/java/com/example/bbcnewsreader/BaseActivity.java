@@ -7,6 +7,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.ActivityManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +18,13 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+/**
+ * BaseActivity is the base activity for anny app activities.
+ * It provides common functionality.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class BaseActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
@@ -70,26 +80,31 @@ public class BaseActivity extends AppCompatActivity {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.itemHelp:
+                String helpMessage = this.getHelpMessage();
+
                 AlertDialog.Builder alertDiBuilder = new AlertDialog.Builder(this);
                 alertDiBuilder.setTitle(R.string.application_help)
-                        .setMessage(R.string.help_message)
-                        .setPositiveButton(R.string.alert_yes, (dialog, arg) -> {
+                        .setMessage(helpMessage)
+                        .setPositiveButton(R.string.alert_ok, (dialog, arg) -> {
                             dialog.dismiss();
-                        })
-                        .setNegativeButton(R.string.alert_no, (dialog, arg) -> {
                         });
                 alertDiBuilder.create().show();
                 break;
             case R.id.itemFavorite:
                 startActivity(new Intent(BaseActivity.this, FavoriteNewsActivity.class));
-                Toast.makeText(getApplicationContext(), R.string.my_favorite, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemHome:
                 startActivity(new Intent(BaseActivity.this, NewsActivity.class));
-                Toast.makeText(getApplicationContext(), R.string.home, Toast.LENGTH_SHORT).show();
                 break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Return the help message
+     */
+    public String getHelpMessage(){
+        return getString(R.string.base_help_message);
     }
 }

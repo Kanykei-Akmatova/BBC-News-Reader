@@ -6,6 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * SQL Helper to work with build in DB.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class SQLHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "BBC_NEWS";
     private static final int DATABASE_VERSION = 1;
@@ -47,9 +53,9 @@ public class SQLHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    /*
-     * CREATE OPERATION
-     * */
+    /**
+     * Crete news
+     */
     public Integer add(String title, String link, String description, String date, String linkId) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_TITLE, title);
@@ -62,17 +68,17 @@ public class SQLHelper extends SQLiteOpenHelper {
         return (Integer) (int) db.insert(TABLE_NAME, null, contentValues);
     }
 
-    /*
-     * READ OPERATION
-     * */
+    /**
+     * Return all news
+     */
     public Cursor getAll() {
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery("SELECT id, title, link, description, date, link_id FROM " + TABLE_NAME, null);
     }
 
-    /*
-     * DELETE OPERATION
-     * */
+    /**
+     * Delete news by id
+     */
     public boolean delete(int id) {
         SQLiteDatabase db = getWritableDatabase();
         return db.delete(TABLE_NAME,
@@ -80,9 +86,9 @@ public class SQLHelper extends SQLiteOpenHelper {
                 new String[]{String.valueOf(id)}) == 1;
     }
 
-    /*
-     * DELETE OPERATION
-     * */
+    /**
+     * Delete news by link id
+     */
     public boolean deleteByLinkId(String linkId) {
         SQLiteDatabase db = getWritableDatabase();
         return db.delete(TABLE_NAME,
@@ -90,9 +96,9 @@ public class SQLHelper extends SQLiteOpenHelper {
                 new String[]{String.valueOf(linkId)}) == 1;
     }
 
-    /*
-     * GET DB VERSION
-     * */
+    /**
+     * Return DB Version
+     */
     public int getVersion() {
         SQLiteDatabase db = getWritableDatabase();
         return db.getVersion();

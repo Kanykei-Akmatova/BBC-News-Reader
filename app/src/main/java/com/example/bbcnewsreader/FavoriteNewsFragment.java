@@ -14,6 +14,12 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * FavoriteNewsFragment provides presentation for favorite news.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class FavoriteNewsFragment extends Fragment {
     private List<RssItem> bbcNews;
 

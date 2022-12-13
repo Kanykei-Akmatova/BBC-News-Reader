@@ -2,6 +2,12 @@ package com.example.bbcnewsreader;
 
 import java.io.Serializable;
 
+/**
+ * Rss Item Model to store rss data.
+ * @author  Kanykei Akmatova
+ * @version 1.0
+ * @since   2022-12-12
+ */
 public class RssItem implements Serializable {
     public String title;
     public String link;
